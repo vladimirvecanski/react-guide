@@ -24,10 +24,6 @@ const ExpenseForm = (props) => {
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    // enteredAmount: event.target.value,
-    // })
   };
 
   const dateChangeHandler = (event) => {
@@ -38,7 +34,7 @@ const ExpenseForm = (props) => {
     event.preventDefault(); // prevent browser to reload/refresh
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
     props.onSaveExpenseData(expenseData);
